@@ -33,10 +33,10 @@ const Menu = () => {
   };
 
   return (
-    <div className="absolute right-4 top-20 mx-10">
-      <ul className="list capitalize flex items-center gap-3 px-2.5 py-1.5">
+    <div className="absolute right-4 top-20 mx-5 sm:mx-10">
+      <ul className="flex flex-wrap items-center gap-3 px-2.5 py-1.5 text-gray-700 capitalize">
         <li className="flex items-center gap-1 cursor-pointer">
-          <ListFilter />
+          <ListFilter size={18} />
           <select
             value={filterPriority}
             onChange={(e) => setFilterPriority(e.target.value)}
@@ -50,7 +50,7 @@ const Menu = () => {
         </li>
 
         <li className="flex items-center gap-1 cursor-pointer">
-          <ArrowUpDown />
+          <ArrowUpDown size={18} />
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
@@ -63,7 +63,7 @@ const Menu = () => {
         </li>
 
         <li className="flex items-center gap-1 cursor-pointer">
-          <Layers3 />
+          <Layers3 size={18} />
           <select
             value={groupBy}
             onChange={(e) => setGroupBy(e.target.value)}
@@ -75,15 +75,15 @@ const Menu = () => {
         </li>
 
         <li
-          className="flex items-center gap-1 cursor-pointer text-gray-600 hover:scale-110 transition"
+          className="flex items-center gap-1 cursor-pointer text-gray-700 hover:scale-110 transition-transform"
           onClick={() => setShowForm(!showForm)}
         >
-          <Plus />
+          <Plus size={20} />
         </li>
       </ul>
 
       {showForm && (
-        <div className="absolute right-0 mt-2 bg-white shadow-lg p-4 rounded-lg w-72 border border-gray-200">
+        <div className="absolute right-0 mt-2 bg-white shadow-xl p-4 rounded-lg w-72 sm:w-80 border border-gray-200 z-20">
           <form onSubmit={handleAddTask} className="flex flex-col gap-2">
             <input
               type="text"
@@ -92,7 +92,7 @@ const Menu = () => {
               onChange={(e) =>
                 setNewTask({ ...newTask, title: e.target.value })
               }
-              className="border p-2 rounded text-sm"
+              className="border p-2 rounded text-sm focus:ring-2 focus:ring-blue-300 outline-none"
             />
             <textarea
               placeholder="Description (optional)"
@@ -100,14 +100,14 @@ const Menu = () => {
               onChange={(e) =>
                 setNewTask({ ...newTask, description: e.target.value })
               }
-              className="border p-2 rounded text-sm"
+              className="border p-2 rounded text-sm focus:ring-2 focus:ring-blue-300 outline-none"
             />
             <select
               value={newTask.priority}
               onChange={(e) =>
                 setNewTask({ ...newTask, priority: e.target.value })
               }
-              className="border p-2 rounded text-sm"
+              className="border p-2 rounded text-sm focus:ring-2 focus:ring-blue-300 outline-none"
             >
               <option value="low">Low</option>
               <option value="medium">Medium</option>
@@ -115,7 +115,7 @@ const Menu = () => {
             </select>
             <button
               type="submit"
-              className="bg-blue-600 text-white py-1 rounded text-sm hover:bg-blue-700"
+              className="bg-blue-600 text-white py-1 rounded text-sm hover:bg-blue-700 transition"
             >
               Add Task
             </button>
