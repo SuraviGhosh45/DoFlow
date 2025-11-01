@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+body{
+    font-family: 'Raleway','open sans';
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg,#FFBDBD,#FBFBFB);
+}
+
+.head{
+    color:#E4004B;
+}
+
+.list li{
+    font-weight: 500;
+    padding: 10px;
+}
+
+.list li:hover{
+    font-weight: 800;
+}
+
+h3{
+    text-align: center;
+}
+
+.section{
+    border: 2px solid #211832;
+    text-transform: capitalize;
+    text-align: center;
+}
+.section h4{
+    font-weight:bold;
+}
